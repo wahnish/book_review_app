@@ -1,9 +1,8 @@
 class User < ActiveRecord::Base
-  attr_accessible :age, :email, :first_name, :last_name
+  attr_accessible :user_id, :first_name, :last_name, :age, :email
 
   has_many :books
-
-  has_many :reviews through => :books
+  has_many :reviews
 
   def is_teen?
   	if @age.between?(12, 19)
@@ -13,11 +12,12 @@ class User < ActiveRecord::Base
 
   def has_long_name?
   	if @last_name.length > 10
-  		puts "This name has more than 10 characters!"
+  		puts "Too long - it has more than 10 characters!"
   	end
   end
 
-  def all_long_name?
-  	return is_long_name.a
+  def all_long_name
+  	return has_long_name.a
+  end
 
 end
