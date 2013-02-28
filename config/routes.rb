@@ -1,4 +1,13 @@
 BookReviewApp::Application.routes.draw do
+  resources :reviews
+
+
+  resources :books
+
+
+  resources :users
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
