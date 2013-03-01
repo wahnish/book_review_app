@@ -5,9 +5,8 @@ class User < ActiveRecord::Base
   has_many :reviews
 
   def is_teen?
-  	if @age.between?(12, 19)
-  		return true
-  	end
+  	 age.between?(12, 19)
+  		
   end
 
   def has_long_name?
